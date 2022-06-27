@@ -68,3 +68,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### export/ export default의 차이
+
+export: 하나 이상의 모듈이 있을 수 있음을 암시
+export default: 하나의 모듈만 있음.
+따라서 export만으로 모듈을 내보내게 되면, import하는 쪽에서는 {}를 같이 써서 불러와야하고,
+export default로 모듈을 내보내면, import하는 쪽에서는 {} 없이 불러올 수 있다.
+
+### 호환성 문제
+
+JS와 패키지 간 호환성 문제가 있을 수 있으니, 뭔가 이상하다 싶으면 docs 볼것.
+react-router-dom <Switch> -> <Routes> & <Route></Route> -> <Route element />

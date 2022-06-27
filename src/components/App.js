@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import AppRouter from "components/Router";
+import { AppRouter } from "components/Router";
 import { authService } from "fbase";
 
-function App() {
+export default function App() {
   const [init, setInit] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   useEffect(() => {
     authService.onAuthStateChanged((user) => {
       if (user) {
@@ -22,5 +22,3 @@ function App() {
     </>
   );
 }
-
-export default App;
