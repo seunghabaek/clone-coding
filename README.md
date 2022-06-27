@@ -80,3 +80,8 @@ export default로 모듈을 내보내면, import하는 쪽에서는 {} 없이 �
 
 JS와 패키지 간 호환성 문제가 있을 수 있으니, 뭔가 이상하다 싶으면 docs 볼것.
 react-router-dom <Switch> -> <Routes> & <Route></Route> -> <Route element />
+
+### javascript 조건문
+
+A && B : A가 true이면 B를 반환하고, A가 false이면 A를 반환한다.
+A || B : A가 true이면 A를 반환하고, A가 false이면 B를 반환한다.
