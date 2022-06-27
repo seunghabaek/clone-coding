@@ -8,9 +8,9 @@ export const Home = ({ userObj }) => {
   const [nweets, setNweets] = useState([]);
   useEffect(() => {
     dbService.collection("nweets").onSnapshot((snapshot) => {
-      const nweetArray = snapshot.docs.map((docs) => ({
-        id: docs.id,
-        ...docs.data(),
+      const nweetArray = snapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
       }));
       setNweets(nweetArray);
     });
