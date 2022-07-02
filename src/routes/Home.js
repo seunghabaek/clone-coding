@@ -26,13 +26,13 @@ export const Home = ({ userObj }) => {
       const response = await attachmentRef.putString(attachment, "data_url");
       attachmentUrl = await response.ref.getDownloadURL();
     }
-    const nweetObj2 = {
+    const nweetObj = {
       text: nweet,
       createAt: Date.now(),
       creatorId: userObj.uid,
       attachmentUrl,
     };
-    await dbService.collection("nweets").add(nweetObj2);
+    await dbService.collection("nweets").add(nweetObj);
     setNweet("");
     setAttachment("");
   };
