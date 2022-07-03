@@ -13,12 +13,12 @@ import { Profile } from "../routes/Profile";
 export const AppRouter = ({ isLoggedIn, userObj }) => {
   return (
     <Router>
-      {isLoggedIn && <Navigation />}
+      {isLoggedIn && <Navigation userObj={userObj} />}
       {isLoggedIn ? (
         <>
           <Routes>
             <Route exact path="/" element={<Home userObj={userObj} />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile userObj={userObj} />} />
           </Routes>
         </>
       ) : (
