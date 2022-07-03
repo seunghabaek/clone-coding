@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { authService } from "fbase";
 import { useNavigate } from "react-router-dom";
-import { dbService } from "../fbase";
 
-export const Profile = ({ userObj }) => {
+export const Profile = ({ userObj, refreshUser }) => {
   const navigate = useNavigate();
   const [newDiaplyName, setNewDisplayName] = useState(userObj.displayName);
   const onLogOutClick = () => {
@@ -16,9 +15,13 @@ export const Profile = ({ userObj }) => {
     } = event;
     setNewDisplayName(value);
   };
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
     if (userObj.displayName !== newDiaplyName) {
+      await userObj.updateProfile({
+        displayName: newDiaplyName,
+      });
+      refreshUser();
     }
   };
 
