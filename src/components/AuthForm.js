@@ -60,7 +60,7 @@ export const AuthForm = () => {
           value={newAccount ? "Create Account" : "Log In"}
           className="authInput authSubmit"
         />
-        {error && <span className="authError">{error}</span>}}
+        {error && <span className="authError">{error}</span>}
       </form>
       <span onClick={toggleAccount} className="authSwitch">
         {newAccount ? "Sign In" : "Create Account"}
